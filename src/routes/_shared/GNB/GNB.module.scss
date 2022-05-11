@@ -4,7 +4,8 @@
 .gnb {
   position: fixed;
   bottom: 0;
-  width: 430px;
+  width: 100%;
+  max-width: 430px;
   height: sizes.$GNB;
   background-color: colors.$WHITE;
   border-top: 1px solid colors.$GRAYE;

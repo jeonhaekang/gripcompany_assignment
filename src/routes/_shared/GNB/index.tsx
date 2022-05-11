@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import cx from 'classnames'
 import styles from './GNB.module.scss'
 
