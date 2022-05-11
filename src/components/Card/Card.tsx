@@ -12,15 +12,19 @@ const Card = ({ data }: Props) => {
   return (
     <li className={styles.movieItem}>
       <div>
-        <img src={Poster} alt={`${Title}포스터`} />
+        <img src={Poster} alt={`${Title}-poster`} />
       </div>
       <dl>
         <dt>
           <h1>{Title}</h1>
         </dt>
         <dd>
-          <div className={styles.chip}>{Type.toUpperCase()}</div>
-          <div className={styles.chip}>{Year}</div>
+          <ul>
+            <li className={styles.chip}>{Type.toUpperCase()}</li>
+            <li>
+              <time className={styles.chip}>{Year}</time>
+            </li>
+          </ul>
         </dd>
       </dl>
     </li>
