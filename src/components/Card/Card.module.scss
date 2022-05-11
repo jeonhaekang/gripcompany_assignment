@@ -1,0 +1,48 @@
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/constants/colors';
+
+.movieItem {
+  display: flex;
+  gap: 20px;
+  height: 200px;
+  padding: 16px;
+  background: linear-gradient(5deg, colors.$GRAYF 45%, white 0);
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 25%);
+
+  img {
+    width: 120px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  dl {
+    @include flexbox.flexbox(center, flex-start);
+    flex-direction: column;
+    width: 100%;
+
+    dt {
+      @include flexbox.flexbox(center, center);
+      flex: 1;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    dd {
+      display: flex;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 3px 7px;
+      font-size: 13px;
+      background-color: colors.$GRAYD;
+      border-radius: 15px;
+    }
+  }
+}
