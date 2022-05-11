@@ -1,12 +1,13 @@
 import styles from './Main.module.scss'
 
-import Search from './Search'
-import Card from 'components/Card/Card'
-
 import { useRecoilValue } from 'recoil'
 import { movieListState } from 'state/movie'
 
 import { ISearchResult } from '../../types/Movie.d'
+
+import Search from './Search'
+import Card from 'components/Card/Card'
+import EnterSearch from './EnterSearch'
 
 const Main = () => {
   const searchResult = useRecoilValue<ISearchResult>(movieListState)
@@ -15,6 +16,7 @@ const Main = () => {
     <div className={styles.main}>
       <Search />
       <main>
+        {!searchResult.s && <EnterSearch />}
         <ul className={styles.movieList}>
           {searchResult.movieList.map((item) => {
             return <Card key={item.imdbID} data={item} />
