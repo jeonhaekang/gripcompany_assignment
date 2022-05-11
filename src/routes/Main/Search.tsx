@@ -2,13 +2,14 @@ import styles from './Search.module.scss'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
 import { getMovieList } from 'axios/apis'
-import { SearchIcon } from 'assets/svg'
 
 import { useSetRecoilState } from 'recoil'
 import { movieListState } from 'state/movie'
 
 import { ISearchResult } from 'types/Movie'
 import { AxiosResponse } from 'axios'
+
+import { SearchIcon } from 'assets/svg'
 
 const Search = () => {
   const [keyword, setKeyword] = useState('')
@@ -19,10 +20,14 @@ const Search = () => {
 
     getMovieList({ s: keyword, page: 1 })
       .then((res: AxiosResponse) => {
+        if (res.data.Response === 'False') {
+          throw new Error(res.data.Error)
+        }
+
         setMovieList({ s: keyword, page: 1, movieList: res.data.Search })
       })
-      .catch(() => {
-        alert('검색에 실패하였습니다.')
+      .catch((err) => {
+        alert(err.message)
       })
 
     setKeyword('')

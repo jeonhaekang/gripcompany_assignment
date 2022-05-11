@@ -9,6 +9,5 @@
 
 .appWrapper {
   position: relative;
-  padding: 20px;
-  margin-bottom: sizes.$GNB;
+  padding: 20px 20px calc(sizes.$GNB + 20px) 20px;
 }

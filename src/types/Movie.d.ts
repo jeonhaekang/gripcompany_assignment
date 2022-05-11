@@ -3,16 +3,16 @@ export interface ISearchData {
   page: number
 }
 
-export interface ISearchResult extends ISearchData {
-  movieList: []
-}
-
 export interface IMovieItem {
   Poster: string
   Title: string
   Type: string
   Year: String
-  imdbId: string
+  imdbID: string
+}
+
+export interface ISearchResult extends ISearchData {
+  movieList: IMovieItem[]
 }
 
 export interface IMovieList {
