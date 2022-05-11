@@ -1,7 +1,14 @@
+@use '/src/styles/constants/sizes';
+
 .mobileFrame {
   position: relative;
   max-width: 430px;
   min-height: 100vh;
   margin: 0 auto;
   box-shadow: rgba(100, 100, 111, 20%) 0 7px 29px 0;
+}
+
+.appWrapper {
+  padding: 0 20px;
+  margin-bottom: sizes.$GNB;
 }
