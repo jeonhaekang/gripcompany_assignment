@@ -10,10 +10,12 @@ import { ISearchResult } from 'types/Movie'
 import { AxiosResponse } from 'axios'
 
 import { SearchIcon } from 'assets/svg'
+import { alertState } from 'state/modal'
 
 const Search = () => {
   const [keyword, setKeyword] = useState('')
   const setMovieList = useSetRecoilState<ISearchResult>(movieListState)
+  const setAlertState = useSetRecoilState(alertState)
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -27,7 +29,7 @@ const Search = () => {
         setMovieList({ s: keyword, page: 1, movieList: res.data.Search })
       })
       .catch((err) => {
-        alert(err.message)
+        setAlertState({ state: true, message: err.message })
       })
 
     setKeyword('')
