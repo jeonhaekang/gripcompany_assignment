@@ -1,7 +1,7 @@
 import { PleaseEnterKeywordIcon } from 'assets/svg'
-import styles from './EnterSearch.module.scss'
+import styles from './InitalMessage.module.scss'
 
-const EnterSearch = () => {
+const InitalMessage = () => {
   return (
     <div className={styles.enterSearch}>
       <PleaseEnterKeywordIcon />
@@ -10,4 +10,4 @@ const EnterSearch = () => {
   )
 }
 
-export default EnterSearch
+export default InitalMessage
