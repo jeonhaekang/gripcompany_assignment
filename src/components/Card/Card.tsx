@@ -1,6 +1,9 @@
 import styles from './Card.module.scss'
+import { SyntheticEvent } from 'react'
 
 import { IMovieItem } from 'types/Movie'
+
+import emptyImage from '../../assets/Image/emptyImage.png'
 
 interface Props {
   data: IMovieItem
@@ -9,10 +12,14 @@ interface Props {
 const Card = ({ data }: Props) => {
   const { Poster, Title, Year, Type } = data
 
+  const imageOnErrorHandler = (e: SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.src = emptyImage
+  }
+
   return (
     <li className={styles.movieItem}>
       <div>
-        <img src={Poster} alt={`${Title}-poster`} />
+        <img src={Poster} alt={`${Title}-poster`} onError={imageOnErrorHandler} />
       </div>
       <dl>
         <dt>
