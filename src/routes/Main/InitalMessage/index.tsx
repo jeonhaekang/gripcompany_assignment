@@ -1,11 +1,11 @@
-import { PleaseEnterKeywordIcon } from 'assets/svg'
+import emptyResult from '../../../assets/Image/emptyResult.png'
 import styles from './InitalMessage.module.scss'
 
 const InitalMessage = () => {
   return (
     <div className={styles.enterSearch}>
-      <PleaseEnterKeywordIcon />
-      <h1>검색어를 입력해주세요.</h1>
+      <img src={emptyResult} alt='emptyResult' />
+      <h1>검색 결과가 없습니다.</h1>
     </div>
   )
 }
