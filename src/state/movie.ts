@@ -7,5 +7,6 @@ export const movieListState = atom<ISearchResult>({
     s: '',
     page: 0,
     movieList: [],
+    totalResults: 0,
   },
 })

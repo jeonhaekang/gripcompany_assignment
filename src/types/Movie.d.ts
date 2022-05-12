@@ -13,6 +13,7 @@ export interface IMovieItem {
 
 export interface ISearchResult extends ISearchData {
   movieList: IMovieItem[]
+  totalResults: number
 }
 
 export interface IMovieList {

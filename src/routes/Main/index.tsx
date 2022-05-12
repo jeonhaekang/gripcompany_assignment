@@ -8,6 +8,7 @@ import { ISearchResult } from '../../types/Movie.d'
 import Search from './Search'
 import Card from 'components/Card/Card'
 import InitalMessage from './InitalMessage'
+import InfinityScroll from 'components/InfinitiScroll'
 
 const Main = () => {
   const searchResult = useRecoilValue<ISearchResult>(movieListState)
@@ -16,13 +17,17 @@ const Main = () => {
     <div className={styles.main}>
       <Search />
       <main>
-        {!searchResult.s && <InitalMessage />}
-
-        <ul className={styles.movieList}>
-          {searchResult.movieList.map((item) => {
-            return <Card key={item.imdbID} data={item} />
-          })}
-        </ul>
+        {searchResult.s ? (
+          <InfinityScroll>
+            <ul className={styles.movieList}>
+              {searchResult.movieList.map((item) => {
+                return <Card key={item.imdbID} data={item} />
+              })}
+            </ul>
+          </InfinityScroll>
+        ) : (
+          <InitalMessage />
+        )}
       </main>
     </div>
   )

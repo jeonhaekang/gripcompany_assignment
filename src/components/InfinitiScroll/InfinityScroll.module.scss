@@ -1,0 +1,22 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.infinityScroll {
+  .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    & svg {
+      animation: rotation 1000ms infinite;
+    }
+  }
+}

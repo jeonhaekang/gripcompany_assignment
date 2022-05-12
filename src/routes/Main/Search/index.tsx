@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 
 import { getMovieList } from 'axios/apis'
 
-import { useSetRecoilState } from 'recoil'
+import { useResetRecoilState, useSetRecoilState } from 'recoil'
 import { movieListState } from 'state/movie'
 
 import { ISearchResult } from 'types/Movie'
@@ -15,10 +15,17 @@ import { alertState } from 'state/modal'
 const Search = () => {
   const [keyword, setKeyword] = useState('')
   const setMovieList = useSetRecoilState<ISearchResult>(movieListState)
+  const resetMovieList = useResetRecoilState(movieListState)
   const setAlertState = useSetRecoilState(alertState)
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (!keyword.trim()) {
+      return
+    }
+
+    resetMovieList()
 
     getMovieList({ s: keyword, page: 1 })
       .then((res: AxiosResponse) => {
@@ -26,7 +33,7 @@ const Search = () => {
           throw new Error(res.data.Error)
         }
 
-        setMovieList({ s: keyword, page: 1, movieList: res.data.Search })
+        setMovieList({ s: keyword, page: 1, movieList: res.data.Search, totalResults: Number(res.data.totalResults) })
       })
       .catch((err) => {
         setAlertState({ state: true, message: err.message })
