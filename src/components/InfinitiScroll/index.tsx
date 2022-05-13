@@ -6,7 +6,7 @@ import { AxiosResponse } from 'axios'
 
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import { movieListState } from 'state/movie'
-import { alertState } from 'state/modal'
+import { modalState } from 'state/modal'
 
 import { Spinner } from '../../assets/svg/index'
 
@@ -18,7 +18,7 @@ const InfinityScroll = ({ children }: Props) => {
   const [movieList, setMovieList] = useRecoilState(movieListState)
   const [isNext, setIsNext] = useState(false)
   const spinnerRef = useRef<HTMLDivElement>(null)
-  const setAlertState = useSetRecoilState(alertState)
+  const setModalState = useSetRecoilState(modalState)
 
   const observer = useMemo(
     () =>
@@ -46,10 +46,12 @@ const InfinityScroll = ({ children }: Props) => {
             observer.observe(target)
           })
           .catch((err) => {
-            setAlertState({ state: true, message: err.message })
+            setModalState((prev) => {
+              return { ...prev, state: true, message: err.message }
+            })
           })
       }),
-    [movieList.page, movieList.s, setAlertState, setMovieList]
+    [movieList.page, movieList.s, setModalState, setMovieList]
   )
 
   useEffect(() => {
