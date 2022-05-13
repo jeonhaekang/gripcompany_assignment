@@ -6,7 +6,7 @@ import { movieListState } from 'state/movie'
 import { ISearchResult } from '../../types/Movie.d'
 
 import Search from './Search'
-import Card from 'components/Card/Card'
+import Card from 'components/Card'
 import InitalMessage from './InitalMessage'
 import InfinityScroll from 'components/InfinitiScroll'
 
