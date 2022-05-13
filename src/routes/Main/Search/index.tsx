@@ -27,10 +27,6 @@ const Search = () => {
 
     getMovieList({ s: keyword, page: 1 })
       .then((res: AxiosResponse) => {
-        if (res.data.Response === 'False') {
-          throw new Error(res.data.Error)
-        }
-
         setMovieList({ s: keyword, page: 1, movieList: res.data.Search, totalResults: Number(res.data.totalResults) })
       })
       .catch((err) => {

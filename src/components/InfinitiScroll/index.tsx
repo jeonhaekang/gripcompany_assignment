@@ -30,10 +30,6 @@ const InfinityScroll = ({ children }: Props) => {
 
         getMovieList({ s: movieList.s, page: movieList.page + 1 })
           .then((res: AxiosResponse) => {
-            if (res.data.Response === 'False') {
-              throw new Error(res.data.Error)
-            }
-
             setMovieList((prev) => {
               return {
                 ...prev,
