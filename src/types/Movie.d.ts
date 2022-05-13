@@ -7,7 +7,7 @@ export interface IMovieItem {
   Poster: string
   Title: string
   Type: string
-  Year: String
+  Year: string
   imdbID: string
 }
 
