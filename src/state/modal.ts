@@ -1,10 +1,13 @@
-import { IAlert } from '../types/Modal.d'
+import { IModal } from '../types/Modal.d'
 import { atom } from 'recoil'
 
-export const alertState = atom<IAlert>({
-  key: '#alertState',
+export const modalState = atom<IModal>({
+  key: '#modalState',
   default: {
     state: false,
+    type: 'alert',
     message: '',
+    action: () => {},
+    buttonMessage: '확인',
   },
 })
