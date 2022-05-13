@@ -2,21 +2,21 @@ import styles from './Search.module.scss'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
 import { getMovieList } from 'axios/apis'
-
-import { useResetRecoilState, useSetRecoilState } from 'recoil'
-import { movieListState } from 'state/movie'
-
-import { ISearchResult } from 'types/Movie'
 import { AxiosResponse } from 'axios'
 
+import { useSetRecoilState } from 'recoil'
+import { movieListState } from 'state/movie'
+import { modalState } from 'state/modal'
+
+import { ISearchResult } from 'types/Movie'
+import { IModal } from 'types/Modal'
+
 import { SearchIcon } from 'assets/svg'
-import { alertState } from 'state/modal'
 
 const Search = () => {
   const [keyword, setKeyword] = useState('')
   const setMovieList = useSetRecoilState<ISearchResult>(movieListState)
-  const resetMovieList = useResetRecoilState(movieListState)
-  const setAlertState = useSetRecoilState(alertState)
+  const setModalState = useSetRecoilState<IModal>(modalState)
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -24,8 +24,6 @@ const Search = () => {
     if (!keyword.trim()) {
       return
     }
-
-    resetMovieList()
 
     getMovieList({ s: keyword, page: 1 })
       .then((res: AxiosResponse) => {
@@ -36,7 +34,9 @@ const Search = () => {
         setMovieList({ s: keyword, page: 1, movieList: res.data.Search, totalResults: Number(res.data.totalResults) })
       })
       .catch((err) => {
-        setAlertState({ state: true, message: err.message })
+        setModalState((prev) => {
+          return { ...prev, state: true, message: err.message }
+        })
       })
 
     setKeyword('')
