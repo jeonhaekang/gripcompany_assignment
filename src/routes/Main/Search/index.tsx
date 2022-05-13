@@ -1,7 +1,7 @@
 import styles from './Search.module.scss'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
-import { getMovieList } from 'axios/apis'
+import { getMovieList } from 'axios/movieApi'
 import { AxiosResponse } from 'axios'
 
 import { useSetRecoilState } from 'recoil'

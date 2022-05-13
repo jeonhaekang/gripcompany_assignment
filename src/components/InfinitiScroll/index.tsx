@@ -1,7 +1,7 @@
 import styles from './InfinityScroll.module.scss'
 import { ReactNode, useEffect, useMemo, useRef, useState } from 'react'
 
-import { getMovieList } from 'axios/apis'
+import { getMovieList } from 'axios/movieApi'
 import { AxiosResponse } from 'axios'
 
 import { useRecoilState, useSetRecoilState } from 'recoil'

@@ -1,6 +1,7 @@
 import { AxiosResponse } from 'axios'
-import { ISearchData, IMovieList } from '../types/Movie.d'
 import { instance } from './axios'
+
+import { IMovieList, ISearchData } from 'types/Movie'
 
 const BASE_URL = 'http://www.omdbapi.com/'
 
