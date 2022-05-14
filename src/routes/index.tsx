@@ -13,6 +13,7 @@ import Main from './Main'
 import Bookmark from './Bookmark'
 import GNB from './_shared/GNB'
 import Modal from 'components/Modal'
+import Search from './Main/Search'
 
 const App = () => {
   const initialBookmark = useSetRecoilState<IMovieItem[]>(bookMarkList)
@@ -25,6 +26,7 @@ const App = () => {
     <div className={styles.mobileFrame}>
       <Modal />
       <div className={styles.appWrapper}>
+        <Search />
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/bookmark' element={<Bookmark />} />
