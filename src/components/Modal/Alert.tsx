@@ -1,3 +1,5 @@
+import styles from './Modal.module.scss'
+
 import { useRecoilValue, useResetRecoilState } from 'recoil'
 import { modalState } from 'state/modal'
 
@@ -12,12 +14,14 @@ const Alert = () => {
   }
 
   return (
-    <div>
-      <p>{modal.message}</p>
-      <button type='button' onClick={onClickHandler}>
-        확인
-      </button>
-    </div>
+    <>
+      <p className={styles.message}>{modal.message}</p>
+      <div className={styles.buttonWrap}>
+        <button className={styles.okBtn} type='button' onClick={onClickHandler}>
+          확인
+        </button>
+      </div>
+    </>
   )
 }
 

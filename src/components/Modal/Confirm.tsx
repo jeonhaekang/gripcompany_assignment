@@ -1,3 +1,5 @@
+import styles from './Modal.module.scss'
+
 import { useRecoilValue, useResetRecoilState } from 'recoil'
 import { modalState } from 'state/modal'
 
@@ -17,15 +19,17 @@ const Confirm = () => {
   }
 
   return (
-    <div>
-      <p>{modal.message}</p>
-      <button type='button' onClick={confirmHandler}>
-        {modal.buttonMessage}
-      </button>
-      <button type='button' onClick={modalCloseHandler}>
-        닫기
-      </button>
-    </div>
+    <>
+      <p className={styles.message}>{modal.message}</p>
+      <div className={styles.buttonWrap}>
+        <button className={styles.okBtn} type='button' onClick={confirmHandler}>
+          {modal.buttonMessage}
+        </button>
+        <button className={styles.cancleBtn} type='button' onClick={modalCloseHandler}>
+          닫기
+        </button>
+      </div>
+    </>
   )
 }
 
