@@ -1,4 +1,6 @@
 import styles from './Main.module.scss'
+import { useMemo } from 'react'
+import _ from 'lodash'
 
 import { useRecoilValue } from 'recoil'
 import { movieListState } from 'state/movie'
@@ -6,10 +8,9 @@ import { movieListState } from 'state/movie'
 import { ISearchResult } from '../../types/Movie.d'
 
 import Card from 'components/Card'
-import InitalMessage from './InitalMessage'
+
 import InfinityScroll from 'components/InfinitiScroll'
-import { useMemo } from 'react'
-import _ from 'lodash'
+import InitalMessage from 'components/InitalMessage'
 
 const Main = () => {
   const searchResult = useRecoilValue<ISearchResult>(movieListState)

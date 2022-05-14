@@ -1,10 +1,12 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
+@use '/src/styles/constants/levels';
 
 .search {
   @include flexbox.flexbox(center, center);
   position: sticky;
   top: 20px;
+  z-index: levels.$GNB;
   box-sizing: border-box;
   gap: 10px;
   height: 40px;

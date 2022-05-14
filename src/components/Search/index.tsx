@@ -1,7 +1,6 @@
 import styles from './Search.module.scss'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import _ from 'lodash'
 
 import { getMovieList } from 'axios/movieApi'
 import { AxiosResponse } from 'axios'
@@ -10,7 +9,7 @@ import { useSetRecoilState } from 'recoil'
 import { movieListState } from 'state/movie'
 import { modalState } from 'state/modal'
 
-import { IMovieItem, ISearchResult } from 'types/Movie'
+import { ISearchResult } from 'types/Movie'
 import { IModal } from 'types/Modal'
 
 import { SearchIcon } from 'assets/svg'
@@ -31,6 +30,8 @@ const Search = () => {
     getMovieList({ s: keyword, page: 1 })
       .then((res: AxiosResponse) => {
         setMovieList({ s: keyword, page: 1, movieList: res.data.Search, totalResults: Number(res.data.totalResults) })
+        console.log('navi')
+
         navigator('/')
       })
       .catch((err) => {

@@ -13,7 +13,7 @@ import Main from './Main'
 import Bookmark from './Bookmark'
 import GNB from './_shared/GNB'
 import Modal from 'components/Modal'
-import Search from './Main/Search'
+import Search from '../components/Search'
 
 const App = () => {
   const initialBookmark = useSetRecoilState<IMovieItem[]>(bookMarkList)
