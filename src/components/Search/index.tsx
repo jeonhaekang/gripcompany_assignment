@@ -29,9 +29,7 @@ const Search = () => {
 
     getMovieList({ s: keyword, page: 1 })
       .then((res: AxiosResponse) => {
-        setMovieList({ s: keyword, page: 1, movieList: res.data.Search, totalResults: Number(res.data.totalResults) })
-        console.log('navi')
-
+        setMovieList({ s: keyword, page: 1, movieList: res.data.Search, totalResults: res.data.totalResults })
         navigator('/')
       })
       .catch((err) => {
