@@ -31,7 +31,7 @@ const Card = ({ data }: Props) => {
   }
 
   const confirmMessage = () => {
-    return isBookmark ? `${Title}을 북마크에서 삭제하시겠습니까?` : `${Title}을 북마크에 등록하시겠습니까?`
+    return isBookmark ? `북마크에서 삭제하시겠습니까?` : `북마크에 등록하시겠습니까?`
   }
 
   const onClickHandler = () => {
