@@ -8,12 +8,12 @@ const GNB = () => {
       <ul>
         <li>
           <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-            main
+            메인페이지
           </NavLink>
         </li>
         <li>
           <NavLink to='/bookmark' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-            bookmark
+            북마크
           </NavLink>
         </li>
       </ul>
