@@ -1,8 +1,8 @@
 @use '/src/styles/mixins/position';
+@use '/src/styles/mixins/flexbox';
 
-.enterSearch {
-  display: flex;
+.initialMessage {
+  @include flexbox.flexbox(center, center);
+  @include position.middleBox;
   flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
 }

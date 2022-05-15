@@ -2,12 +2,12 @@
 
 .mobileFrame {
   max-width: 430px;
-  min-height: 100vh;
   margin: 0 auto;
   box-shadow: rgba(100, 100, 111, 20%) 0 7px 29px 0;
 }
 
 .appWrapper {
   position: relative;
+  min-height: 100vh;
   padding: 20px 20px calc(sizes.$GNB + 20px) 20px;
 }

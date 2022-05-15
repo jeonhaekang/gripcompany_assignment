@@ -5,7 +5,7 @@ import styles from './InitalMessage.module.scss'
 const InitalMessage = () => {
   const { pathname } = useLocation()
   return (
-    <div className={styles.enterSearch}>
+    <div className={styles.initialMessage}>
       <img src={emptyResult} alt='emptyResult' />
       <h1>{pathname === '/' ? '검색 결과가 없습니다.' : '북마크가 비었습니다.'}</h1>
     </div>
