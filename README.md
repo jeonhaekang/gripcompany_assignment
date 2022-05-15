@@ -1,13 +1,13 @@
-<div align="center">
 
-## 📚 gripcompany기업과제 제출 레포지토리
+
+# 📚 gripcompany기업과제 제출 레포지토리
 🔗 : http://gripcompany-assignment.s3-website.ap-northeast-2.amazonaws.com/
 
 api를 활용한 영화 검색 및 간단한 북마크 기능 구현
 
 <br/>
 
-> ## 🗂 폴더구조
+# 🗂 폴더구조
 
 <br/>
 
@@ -19,70 +19,31 @@ api를 활용한 영화 검색 및 간단한 북마크 기능 구현
  ┃ ┣ 📂Image<br/>
  ┃ ┗ 📂svg<br/>
  ┣ 📂axios<br/>
- ┃ ┣ 📜axios.ts<br/>
- ┃ ┗ 📜movieApi.ts<br/>
  ┣ 📂components<br/>
  ┃ ┣ 📂Card<br/>
- ┃ ┃ ┣ 📜Card.module.scss<br/>
- ┃ ┃ ┗ 📜index.tsx<br/>
  ┃ ┣ 📂InfinitiScroll<br/>
- ┃ ┃ ┣ 📜InfinityScroll.module.scss<br/>
- ┃ ┃ ┗ 📜index.tsx<br/>
  ┃ ┣ 📂InitalMessage<br/>
- ┃ ┃ ┣ 📜InitalMessage.module.scss<br/>
- ┃ ┃ ┗ 📜index.tsx<br/>
  ┃ ┣ 📂Modal<br/>
- ┃ ┃ ┣ 📜Alert.tsx<br/>
- ┃ ┃ ┣ 📜Confirm.tsx<br/>
- ┃ ┃ ┣ 📜Modal.module.scss<br/>
- ┃ ┃ ┗ 📜index.tsx<br/>
  ┃ ┗ 📂Search<br/>
- ┃ ┃ ┣ 📜Search.module.scss<br/>
- ┃ ┃ ┗ 📜index.tsx<br/>
  ┣ 📂routes<br/>
  ┃ ┣ 📂Bookmark<br/>
- ┃ ┃ ┣ 📜Bookmark.module.scss<br/>
- ┃ ┃ ┗ 📜index.tsx<br/>
  ┃ ┣ 📂Main<br/>
- ┃ ┃ ┣ 📜Main.module.scss<br/>
- ┃ ┃ ┗ 📜index.tsx<br/>
  ┃ ┣ 📂_shared<br/>
  ┃ ┃ ┗ 📂GNB<br/>
- ┃ ┃ ┃ ┣ 📜GNB.module.scss<br/>
- ┃ ┃ ┃ ┗ 📜index.tsx<br/>
- ┃ ┣ 📜Routes.module.scss<br/>
- ┃ ┗ 📜index.tsx<br/>
  ┣ 📂state<br/>
- ┃ ┣ 📜modal.ts<br/>
- ┃ ┗ 📜movie.ts<br/>
  ┣ 📂styles<br/>
  ┃ ┣ 📂base<br/>
- ┃ ┃ ┣ 📜_fonts.scss<br/>
- ┃ ┃ ┣ 📜_more.scss<br/>
- ┃ ┃ ┗ 📜_reset.scss<br/>
  ┃ ┣ 📂constants<br/>
- ┃ ┃ ┣ 📜_colors.scss<br/>
- ┃ ┃ ┣ 📜_levels.scss<br/>
- ┃ ┃ ┗ 📜_sizes.scss<br/>
  ┃ ┣ 📂mixins<br/>
- ┃ ┃ ┣ 📜_animation.scss<br/>
- ┃ ┃ ┣ 📜_flexbox.scss<br/>
- ┃ ┃ ┣ 📜_position.scss<br/>
- ┃ ┃ ┣ 📜_responsive.scss<br/>
- ┃ ┃ ┗ 📜_visual.scss<br/>
- ┃ ┗ 📜index.scss<br/>
  ┣ 📂types<br/>
- ┃ ┣ 📜Modal.d.ts<br/>
- ┃ ┗ 📜Movie.d.ts<br/>
  ┣ 📂utils<br/>
- ┃ ┗ 📜localStorage.ts<br/>
  ┗ 📜index.tsx<br/>
  </div>
  </details>
 
 <br/>
 
-> ## 🛠 스택
+# 🛠 스택
 
 <br/>
 
@@ -95,12 +56,23 @@ api를 활용한 영화 검색 및 간단한 북마크 기능 구현
 
 <br/>
 
-> ## 🏞 페이지 GIF
+# 🏞 페이지 GIF
 
-<br/><br/>
+<br/>
+
+<div align="center">
 
 |검색, 무한스크롤|북마크 추가, 삭제|
 |:---:|:---:|
 |<img src="https://user-images.githubusercontent.com/73621658/168454674-2d435311-8b94-4dc3-b1cf-dbdd30c064ec.gif" />|<img src="https://user-images.githubusercontent.com/73621658/168454677-a8621f5f-7e32-47cd-b813-82a16611e4bc.gif"/>|
 
- </div>
+</div>
+
+1. 메인페이지
+* 영화검색 기능, 10개씩 영화 목록 로딩
+* IntersectionObserver를 활용한 무한스크롤 구현
+* 카드 클릭시 모달을 통한 북마크 기능
+
+2. 북마크 페이지
+* 로컬 스토리지를 활용한 북마크 페이지
+* 북마크한 영화 목록 표시, 카드 클릭시 북마크 해제 기능
