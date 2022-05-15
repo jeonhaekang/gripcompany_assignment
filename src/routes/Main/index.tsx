@@ -31,7 +31,7 @@ const Main = () => {
             </ul>
           </InfinityScroll>
         ) : (
-          <InitalMessage />
+          <InitalMessage message='검색 결과가 없습니다.' />
         )}
       </main>
     </div>

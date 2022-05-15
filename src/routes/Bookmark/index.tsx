@@ -21,7 +21,7 @@ const Bookmark = () => {
           })}
         </ul>
       ) : (
-        <InitalMessage />
+        <InitalMessage message='북마크가 비었습니다.' />
       )}
     </div>
   )

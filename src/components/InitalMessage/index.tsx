@@ -1,13 +1,15 @@
-import { useLocation } from 'react-use'
-import emptyResult from '../../assets/Image/emptyResult.png'
 import styles from './InitalMessage.module.scss'
+import emptyResult from '../../assets/Image/emptyResult.png'
 
-const InitalMessage = () => {
-  const { pathname } = useLocation()
+interface Props {
+  message: string
+}
+
+const InitalMessage = ({ message }: Props) => {
   return (
     <div className={styles.initialMessage}>
       <img src={emptyResult} alt='emptyResult' />
-      <h1>{pathname === '/' ? '검색 결과가 없습니다.' : '북마크가 비었습니다.'}</h1>
+      <h1>{message}</h1>
     </div>
   )
 }
